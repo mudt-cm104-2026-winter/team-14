@@ -8,4 +8,5 @@ Example:
 
 ## Unreleased
 
+- Replace the starter fields with a basic calculator (#3)
 - Start from the repository template
