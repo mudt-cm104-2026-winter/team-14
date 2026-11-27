@@ -46,6 +46,10 @@
     {% else %}
     <p class="empty">No calculations yet.</p>
     {% endif %}
+
+    <form class="clear" action="/clear" method="post">
+      <button type="submit">Clear history</button>
+    </form>
   </main>
 </body>
 </html>

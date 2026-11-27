@@ -73,3 +73,10 @@ def add(a: str = Form(...), operator: str = Form(...), b: str = Form(...)):
     storage.add_entry(a=left, operator=operator, b=right, result=result)
     # Back to the start page. 303 tells the browser: load it with GET.
     return RedirectResponse("/", status_code=303)
+
+
+@app.post("/clear")
+def clear():
+    """Empty the history and go back to the start page."""
+    storage.clear_entries()
+    return RedirectResponse("/", status_code=303)

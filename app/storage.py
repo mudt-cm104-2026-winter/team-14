@@ -30,3 +30,8 @@ def add_entry(a, operator, b, result):
     _entries.append(entry)
     _next_id += 1
     return entry
+
+
+def clear_entries():
+    """Remove every calculation from the history."""
+    _entries.clear()
