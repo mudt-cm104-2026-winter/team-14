@@ -8,6 +8,7 @@ Example:
 
 ## Unreleased
 
+- Add a delete button for single history entries (#8)
 - Add a Clear history button (#7)
 - Update the page text and layout for the calculator UI (#5)
 - Reject invalid input and division by zero with a clear message (#4)

@@ -35,3 +35,9 @@ def add_entry(a, operator, b, result):
 def clear_entries():
     """Remove every calculation from the history."""
     _entries.clear()
+
+
+def delete_entry(entry_id):
+    """Remove one calculation by its id."""
+    global _entries
+    _entries = [entry for entry in _entries if entry["id"] != entry_id]
