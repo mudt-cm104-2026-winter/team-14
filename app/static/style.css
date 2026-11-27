@@ -67,6 +67,28 @@ form.delete button {
   font-size: .85rem;
 }
 
+form.filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+form.filters label { display: inline-flex; align-items: center; gap: .35rem; }
+
+form.filters select {
+  padding: .35rem .5rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  font: inherit;
+}
+
+form.filters button { padding: .35rem .7rem; font-size: .9rem; }
+
 p.stats { margin: 0 0 .75rem; color: var(--muted); font-size: .9rem; }
 
 p.stats strong { color: var(--fg); }

@@ -26,13 +26,26 @@ templates = Jinja2Templates(directory=HERE / "templates")
 
 @app.get("/")
 def show_list(request: Request):
-    """The start page: the form and all entries."""
+    """The start page: the form and the history, optionally filtered."""
+    operator = request.query_params.get("operator", "all")
+    newest = request.query_params.get("newest") == "1"
+
+    entries = storage.all_entries()
+    if operator in ("+", "-", "*", "/"):
+        entries = [entry for entry in entries if entry["operator"] == operator]
+    else:
+        operator = "all"
+    if newest:
+        entries = list(reversed(entries))
+
     return templates.TemplateResponse(
         request,
         "index.html",
         {
-            "entries": storage.all_entries(),
+            "entries": entries,
             "stats": storage.stats(),
+            "operator": operator,
+            "newest": newest,
             "error": request.query_params.get("error"),
         },
     )
