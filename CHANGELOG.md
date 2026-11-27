@@ -8,6 +8,7 @@ Example:
 
 ## Unreleased
 
+- Add operator filter and newest-first sorting (#10)
 - Show calculation count and highest/lowest result (#9)
 - Add a delete button for single history entries (#8)
 - Add a Clear history button (#7)

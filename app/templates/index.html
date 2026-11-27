@@ -27,9 +27,23 @@
       <button type="submit">Calculate</button>
     </form>
 
+    <form class="filters" method="get">
+      <label>Operator
+        <select name="operator">
+          <option value="all" {% if operator == 'all' %}selected{% endif %}>All</option>
+          <option value="+" {% if operator == '+' %}selected{% endif %}>+</option>
+          <option value="-" {% if operator == '-' %}selected{% endif %}>−</option>
+          <option value="*" {% if operator == '*' %}selected{% endif %}>×</option>
+          <option value="/" {% if operator == '/' %}selected{% endif %}>÷</option>
+        </select>
+      </label>
+      <label><input type="checkbox" name="newest" value="1" {% if newest %}checked{% endif %}> Newest first</label>
+      <button type="submit">Apply</button>
+    </form>
+
     {% if stats %}
     <p class="stats">
-      {{ stats.count }} calculation{{ '' if stats.count == 1 else 's' }} ·
+      Total: {{ stats.count }} calculation{{ '' if stats.count == 1 else 's' }} ·
       highest <strong>{{ stats.highest }}</strong> ·
       lowest <strong>{{ stats.lowest }}</strong>
     </p>
@@ -57,7 +71,7 @@
       </tbody>
     </table>
     {% else %}
-    <p class="empty">No calculations yet.</p>
+    <p class="empty">{% if stats %}No calculations for this filter.{% else %}No calculations yet.{% endif %}</p>
     {% endif %}
 
     <form class="clear" action="/clear" method="post">
