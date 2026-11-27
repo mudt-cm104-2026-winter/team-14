@@ -8,6 +8,7 @@ Example:
 
 ## Unreleased
 
+- Add a glossary of calculator and Git terms (#14)
 - Add a review workflow guide in docs/how-we-review.md (#13)
 - Add a local setup guide in docs/how-to-run.md (#12)
 - Add operator filter and newest-first sorting (#10)
