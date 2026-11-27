@@ -80,3 +80,10 @@ def clear():
     """Empty the history and go back to the start page."""
     storage.clear_entries()
     return RedirectResponse("/", status_code=303)
+
+
+@app.post("/delete/{entry_id}")
+def delete(entry_id: int):
+    """Remove one calculation and go back to the start page."""
+    storage.delete_entry(entry_id)
+    return RedirectResponse("/", status_code=303)

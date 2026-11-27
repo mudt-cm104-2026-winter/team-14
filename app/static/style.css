@@ -56,3 +56,13 @@ th { color: var(--muted); font-weight: 600; }
 td.result { font-weight: 600; }
 
 form.clear { margin-top: 1rem; }
+
+form.delete { margin: 0; }
+
+form.delete button {
+  padding: .25rem .5rem;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--fg);
+  font-size: .85rem;
+}

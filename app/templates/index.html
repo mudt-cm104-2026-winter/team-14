@@ -30,7 +30,7 @@
     {% if entries %}
     <table>
       <thead>
-        <tr><th>First</th><th>Op</th><th>Second</th><th>Result</th></tr>
+        <tr><th>First</th><th>Op</th><th>Second</th><th>Result</th><th></th></tr>
       </thead>
       <tbody>
         {% for entry in entries %}
@@ -39,6 +39,11 @@
           <td>{{ entry.operator }}</td>
           <td>{{ entry.b }}</td>
           <td class="result">= {{ entry.result }}</td>
+          <td>
+            <form class="delete" action="/delete/{{ entry.id }}" method="post">
+              <button type="submit">Delete</button>
+            </form>
+          </td>
         </tr>
         {% endfor %}
       </tbody>
