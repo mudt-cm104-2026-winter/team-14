@@ -12,19 +12,25 @@
     <p class="intro">Who brings what to our team evening?</p>
 
     <form class="add" action="/add" method="post">
-      <input name="thing" placeholder="What?" required autocomplete="off" autofocus>
-      <input name="person" placeholder="Who?" required autocomplete="off">
-      <button type="submit">Add</button>
+      <input name="a" type="number" step="any" placeholder="First number" required autocomplete="off" autofocus>
+      <select name="operator">
+        <option value="+">+</option>
+        <option value="-">−</option>
+        <option value="*">×</option>
+        <option value="/">÷</option>
+      </select>
+      <input name="b" type="number" step="any" placeholder="Second number" required autocomplete="off">
+      <button type="submit">Calculate</button>
     </form>
 
     {% if entries %}
     <table>
       <thead>
-        <tr><th>What</th><th>Who</th></tr>
+        <tr><th>Calculation</th></tr>
       </thead>
       <tbody>
         {% for entry in entries %}
-        <tr><td>{{ entry.thing }}</td><td>{{ entry.person }}</td></tr>
+        <tr><td>{{ entry.a }} {{ entry.operator }} {{ entry.b }} = {{ entry.result }}</td></tr>
         {% endfor %}
       </tbody>
     </table>
