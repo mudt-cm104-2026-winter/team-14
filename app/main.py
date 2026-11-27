@@ -32,6 +32,7 @@ def show_list(request: Request):
         "index.html",
         {
             "entries": storage.all_entries(),
+            "stats": storage.stats(),
             "error": request.query_params.get("error"),
         },
     )

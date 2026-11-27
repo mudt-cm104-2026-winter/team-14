@@ -27,6 +27,14 @@
       <button type="submit">Calculate</button>
     </form>
 
+    {% if stats %}
+    <p class="stats">
+      {{ stats.count }} calculation{{ '' if stats.count == 1 else 's' }} ·
+      highest <strong>{{ stats.highest }}</strong> ·
+      lowest <strong>{{ stats.lowest }}</strong>
+    </p>
+    {% endif %}
+
     {% if entries %}
     <table>
       <thead>
