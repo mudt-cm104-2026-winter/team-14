@@ -66,3 +66,7 @@ form.delete button {
   color: var(--fg);
   font-size: .85rem;
 }
+
+p.stats { margin: 0 0 .75rem; color: var(--muted); font-size: .9rem; }
+
+p.stats strong { color: var(--fg); }

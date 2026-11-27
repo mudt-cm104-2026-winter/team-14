@@ -8,6 +8,7 @@ Example:
 
 ## Unreleased
 
+- Show calculation count and highest/lowest result (#9)
 - Add a delete button for single history entries (#8)
 - Add a Clear history button (#7)
 - Update the page text and layout for the calculator UI (#5)

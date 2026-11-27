@@ -41,3 +41,15 @@ def delete_entry(entry_id):
     """Remove one calculation by its id."""
     global _entries
     _entries = [entry for entry in _entries if entry["id"] != entry_id]
+
+
+def stats():
+    """Return count and highest/lowest result, or None when history is empty."""
+    if not _entries:
+        return None
+    results = [entry["result"] for entry in _entries]
+    return {
+        "count": len(results),
+        "highest": max(results),
+        "lowest": min(results),
+    }
