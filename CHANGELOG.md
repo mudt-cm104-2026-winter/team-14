@@ -8,6 +8,7 @@ Example:
 
 ## Unreleased
 
+- Add a local setup guide in docs/how-to-run.md (#12)
 - Add operator filter and newest-first sorting (#10)
 - Show calculation count and highest/lowest result (#9)
 - Add a delete button for single history entries (#8)
