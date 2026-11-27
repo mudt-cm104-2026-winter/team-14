@@ -54,3 +54,5 @@ th, td { padding: .5rem; border-bottom: 1px solid var(--line); text-align: left;
 th { color: var(--muted); font-weight: 600; }
 
 td.result { font-weight: 600; }
+
+form.clear { margin-top: 1rem; }
