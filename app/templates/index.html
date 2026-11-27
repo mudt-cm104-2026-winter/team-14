@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Things to bring</title>
+  <title>Calculator</title>
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
   <main>
-    <h1>Things to bring</h1>
-    <p class="intro">Who brings what to our team evening?</p>
+    <h1>Calculator</h1>
+    <p class="intro">Enter two numbers and pick an operation.</p>
 
     {% if error %}
     <p class="error">{{ error }}</p>
@@ -30,16 +30,21 @@
     {% if entries %}
     <table>
       <thead>
-        <tr><th>Calculation</th></tr>
+        <tr><th>First</th><th>Op</th><th>Second</th><th>Result</th></tr>
       </thead>
       <tbody>
         {% for entry in entries %}
-        <tr><td>{{ entry.a }} {{ entry.operator }} {{ entry.b }} = {{ entry.result }}</td></tr>
+        <tr>
+          <td>{{ entry.a }}</td>
+          <td>{{ entry.operator }}</td>
+          <td>{{ entry.b }}</td>
+          <td class="result">= {{ entry.result }}</td>
+        </tr>
         {% endfor %}
       </tbody>
     </table>
     {% else %}
-    <p class="empty">Nothing here yet.</p>
+    <p class="empty">No calculations yet.</p>
     {% endif %}
   </main>
 </body>
